@@ -256,18 +256,18 @@ function clearAll() {
 
 // 清空结果显示
 function clearResults() {
-    decimalValue.innerHTML = '<span class="result-value-placeholder">待输入</span>';
-    hexValue.innerHTML = '<span class="result-value-placeholder">待输入</span>';
-    binaryValue.innerHTML = '<span class="result-value-placeholder">待输入</span>';
+    decimalValue.innerHTML = '<span class="result-placeholder">待输入</span>';
+    hexValue.innerHTML = '<span class="result-placeholder">待输入</span>';
+    binaryValue.innerHTML = '<span class="result-placeholder">待输入</span>';
 }
 
 // 更新结果显示
 function updateResults(value) {
     // 清除之前的错误状态
     inputValue.classList.remove('input-error');
-    decimalValue.innerHTML = '<span class="result-value-placeholder">待输入</span>';
-    hexValue.innerHTML = '<span class="result-value-placeholder">待输入</span>';
-    binaryValue.innerHTML = '<span class="result-value-placeholder">待输入</span>';
+    decimalValue.innerHTML = '<span class="result-placeholder">待输入</span>';
+    hexValue.innerHTML = '<span class="result-placeholder">待输入</span>';
+    binaryValue.innerHTML = '<span class="result-placeholder">待输入</span>';
 
     if (!value) {
         return;
@@ -321,10 +321,70 @@ function showError() {
     binaryValue.innerHTML = '<span class="result-value-error">无效输入</span>';
 }
 
+// 复制到剪贴板
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        // 显示复制成功提示
+        showToast('已复制到剪贴板');
+    }).catch(err => {
+        console.error('复制失败:', err);
+        showToast('复制失败', 'error');
+    });
+}
+
+// 显示提示消息
+function showToast(message, type = 'success') {
+    // 移除已存在的toast
+    const existingToast = document.querySelector('.toast');
+    if (existingToast) {
+        existingToast.remove();
+    }
+
+    // 创建toast元素
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 24px;
+        background: ${type === 'success' ? '#10b981' : '#ef4444'};
+        color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 1000;
+        animation: fadeInUp 0.3s ease;
+        font-size: 14px;
+        font-weight: 500;
+    `;
+
+    document.body.appendChild(toast);
+
+    // 3秒后移除
+    setTimeout(() => {
+        toast.style.animation = 'fadeOutDown 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
 // 初始化
 function init() {
     updateKeypadState();
     clearResults();
+
+    // 添加复制按钮事件
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-target');
+            const targetElement = document.getElementById(targetId);
+            const text = targetElement.textContent.trim();
+            if (text && text !== '待输入') {
+                copyToClipboard(text);
+            }
+        });
+    });
 }
 
 // 页面加载完成后初始化

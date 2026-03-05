@@ -6,45 +6,125 @@
     <title>Hex/ASCII转换器 - LilysToolKits</title>
     <link rel="stylesheet" href="../home/style.css">
     <link rel="stylesheet" href="hexascii.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔤</text></svg>">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Hex/ASCII转换器</h1>
-            <a href="../home/index.html" class="back-link">返回首页</a>
-        </div>
-
-        <div class="converter-container">
-            <div class="input-area">
-                <div class="input-title">ASCII文本</div>
-                <textarea id="asciiInput" class="input-box" placeholder="请输入ASCII文本"></textarea>
-                <div class="btn-group">
-                    <button id="asciiToHexBtn" class="convert-btn">转换为Hex</button>
-                    <button id="clearAsciiBtn" class="clear-btn">清空</button>
+    <div class="app-container">
+        <!-- 头部导航 -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="nav-bar">
+                    <a href="../home/index.html" class="back-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        <span>返回首页</span>
+                    </a>
+                    <div class="page-title">
+                        <span class="page-icon">🔤</span>
+                        <h1>Hex/ASCII转换器</h1>
+                    </div>
                 </div>
             </div>
+        </header>
 
-            <div class="input-area">
-                <div class="input-title">Hex文本</div>
-                <textarea id="hexInput" class="input-box" placeholder="请输入Hex文本（空格分隔）"></textarea>
-                <div class="btn-group">
-                    <button id="hexToAsciiBtn" class="convert-btn">转换为ASCII</button>
-                    <button id="clearHexBtn" class="clear-btn">清空</button>
+        <!-- 主内容区 -->
+        <main class="app-main">
+            <div class="container">
+                <div class="converter-card">
+                    <!-- ASCII输入区 -->
+                    <div class="input-section">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <span class="section-icon">📝</span>
+                                <span>ASCII 文本</span>
+                            </div>
+                            <button class="copy-btn" data-target="asciiInput" title="复制">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <textarea id="asciiInput" class="input-box" placeholder="请输入ASCII文本" rows="4"></textarea>
+                        <div class="btn-group">
+                            <button id="asciiToHexBtn" class="btn btn-primary">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <polyline points="19 12 12 19 5 12"></polyline>
+                                </svg>
+                                <span>转换为 Hex</span>
+                            </button>
+                            <button id="clearAsciiBtn" class="btn btn-secondary">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                                <span>清空</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 转换指示器 -->
+                    <div class="convert-indicator">
+                        <div class="indicator-line"></div>
+                        <div class="indicator-icon">⇅</div>
+                        <div class="indicator-line"></div>
+                    </div>
+
+                    <!-- Hex输入区 -->
+                    <div class="input-section">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <span class="section-icon">💻</span>
+                                <span>Hex 十六进制</span>
+                            </div>
+                            <button class="copy-btn" data-target="hexInput" title="复制">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <textarea id="hexInput" class="input-box" placeholder="请输入Hex文本（空格分隔）" rows="4"></textarea>
+                        <div class="btn-group">
+                            <button id="hexToAsciiBtn" class="btn btn-primary">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="19" x2="12" y2="5"></line>
+                                    <polyline points="5 12 12 5 19 12"></polyline>
+                                </svg>
+                                <span>转换为 ASCII</span>
+                            </button>
+                            <button id="clearHexBtn" class="btn btn-secondary">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                                <span>清空</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 使用提示 -->
+                    <div class="tips-section">
+                        <div class="tips-title">使用提示</div>
+                        <ul class="tips-list">
+                            <li>ASCII文本将被转换为对应的十六进制值</li>
+                            <li>Hex文本需要用空格分隔，如：48 65 6C 6C 6F</li>
+                            <li>支持大小写十六进制输入</li>
+                            <li>点击复制按钮可快速复制内容</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </main>
 
-            <div class="tips">
-                <p>提示：</p>
-                <p>- ASCII文本将被转换为对应的十六进制值</p>
-                <p>- Hex文本需要用空格分隔，如：48 65 6C 6C 6F</p>
-                <p>- 支持大小写十六进制输入</p>
+        <!-- 页脚 -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>Copyright © 2024 <a href="https://gitee.com/jinwyu" target="_blank">Lily's Tool Kits</a></p>
             </div>
-        </div>
-
-        <div class="copyright">
-            <p>Copyright © 2024 Lily's Tool Kits</p>
-            <p>All Rights Reserved.</p>
-        </div>
+        </footer>
     </div>
 
     <script src="hexascii.js"></script>
