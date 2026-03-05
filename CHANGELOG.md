@@ -5,6 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-03-05
+
+### Changed
+- 📏 **页面布局优化**
+  - 减少主内容区边距(从3rem到1.5rem)
+  - 优化工具网格布局(最小宽度从320px到280px)
+  - 缩小卡片内边距和圆角半径
+  - 压缩各组件间距
+
+- 🖥️ **桌面端改进**
+  - 缩小工具图标尺寸(从56px到48px)
+  - 减小标题和描述文字字号
+  - 优化进制转换器按钮和输入框尺寸
+  - 缩小Hex/ASCII转换器输入框高度(从120px到100px)
+  - 调整数字键盘高度(从56px到48px)
+
+- 📱 **移动端优化**
+  - 进一步压缩768px以下设备的间距和字号
+  - 优化480px以下小屏幕的适配
+  - 所有元素尺寸按比例缩小
+
+- 🎨 **紧凑设计**
+  - 统一缩小所有padding、margin和字号
+  - 优化特性说明区域的尺寸
+  - 改进头部和页脚的边距
+
+### Fixed
+- 🐛 修复页面需要滚动才能显示完整内容的问题
+- 🐛 优化移动端显示效果
+
 ## [1.0.0] - 2026-03-05
 
 ### Added
@@ -125,10 +155,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 版本说明
 
+- **[1.0.2]** - 页面布局优化,紧凑设计,一屏显示
 - **[1.0.0]** - 重大版本更新，全新UI设计系统
 - **[0.0.x]** - 早期开发版本，功能逐步完善
 
 ## 升级指南
+
+### 从 1.0.0 升级到 1.0.2
+
+1. **备份现有数据**（如果有自定义修改）
+2. **更新所有文件**到最新版本
+3. **清除浏览器缓存**以确保新样式生效
+4. **检查自定义修改**是否与新版本兼容
 
 ### 从 0.0.x 升级到 1.0.0
 
@@ -140,6 +178,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 注意事项
 
 - v1.0.0 包含重大UI变更，可能与之前的自定义修改不兼容
+- v1.0.2 优化了页面布局，使内容可以在一屏内显示完整
 - 建议在升级前备份整个项目
 - 新版本使用了CSS变量系统，需要现代浏览器支持
 
@@ -153,6 +192,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+[1.0.2]: https://gitee.com/jinwyu/lilystoolkits-h5/compare/v1.0.0...v1.0.2
 [1.0.0]: https://gitee.com/jinwyu/lilystoolkits-h5/compare/v0.0.6...v1.0.0
 [0.0.6]: https://gitee.com/jinwyu/lilystoolkits-h5/compare/v0.0.5...v0.0.6
 [0.0.5]: https://gitee.com/jinwyu/lilystoolkits-h5/compare/v0.0.4...v0.0.5

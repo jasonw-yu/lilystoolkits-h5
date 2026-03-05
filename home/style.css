@@ -79,7 +79,7 @@ body {
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-sm);
 }
 
 .logo-section {
@@ -90,7 +90,7 @@ body {
 }
 
 .logo-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
@@ -101,7 +101,7 @@ body {
 }
 
 .logo-text h1 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
     background: var(--primary-gradient);
     -webkit-background-clip: text;
@@ -130,7 +130,9 @@ body {
 /* ==================== 主内容区 ==================== */
 .app-main {
     flex: 1;
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-lg) 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -142,15 +144,15 @@ body {
 /* ==================== 工具网格 ==================== */
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-2xl);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
 }
 
 .tool-card {
     background: var(--card-bg);
-    border-radius: var(--radius-xl);
-    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
     box-shadow: var(--shadow-md);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -182,14 +184,14 @@ body {
 }
 
 .tool-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: var(--radius-lg);
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.75rem;
-    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
     background: var(--bg-gradient);
 }
 
@@ -206,17 +208,17 @@ body {
 }
 
 .tool-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: var(--spacing-xs);
 }
 
 .tool-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+    margin-bottom: var(--spacing-sm);
 }
 
 .tool-tags {
@@ -240,18 +242,18 @@ body {
 /* ==================== 特性说明 ==================== */
 .features-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-2xl);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
 }
 
 .feature-item {
     display: flex;
     align-items: flex-start;
-    gap: var(--spacing-md);
-    padding: var(--spacing-lg);
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
     background: var(--card-bg);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
@@ -263,28 +265,28 @@ body {
 }
 
 .feature-icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     flex-shrink: 0;
 }
 
 .feature-text h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.2rem;
 }
 
 .feature-text p {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 /* ==================== 页脚 ==================== */
 .app-footer {
     background: var(--card-bg);
     border-top: 1px solid var(--border-color);
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-md) 0;
     margin-top: auto;
 }
 
@@ -328,71 +330,91 @@ body {
 /* ==================== 响应式设计 ==================== */
 @media (max-width: 768px) {
     .header-content {
-        padding: var(--spacing-md);
+        padding: var(--spacing-sm);
+    }
+
+    .logo-section {
+        gap: var(--spacing-sm);
     }
 
     .logo-icon {
-        font-size: 2rem;
-    }
-
-    .logo-text h1 {
         font-size: 1.5rem;
-    }
-
-    .header-subtitle {
-        margin-left: calc(2rem + var(--spacing-md));
-        font-size: 0.875rem;
-    }
-
-    .app-main {
-        padding: var(--spacing-xl) 0;
-    }
-
-    .tools-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-
-    .tool-card {
-        padding: var(--spacing-lg);
-    }
-
-    .features-section {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-
-    .feature-item {
-        padding: var(--spacing-md);
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 var(--spacing-sm);
     }
 
     .logo-text h1 {
         font-size: 1.25rem;
     }
 
-    .version-badge {
-        font-size: 0.7rem;
-        padding: 0.2rem 0.5rem;
+    .header-subtitle {
+        margin-left: calc(1.5rem + var(--spacing-sm));
+        font-size: 0.8rem;
     }
 
-    .tool-icon {
-        width: 48px;
-        height: 48px;
-        font-size: 1.5rem;
+    .app-main {
+        padding: var(--spacing-md) 0;
     }
 
-    .tool-title {
+    .tools-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .tool-card {
+        padding: var(--spacing-md);
+    }
+
+    .features-section {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .feature-item {
+        padding: var(--spacing-sm);
+    }
+
+    .footer-content {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+
+    .logo-text h1 {
         font-size: 1.1rem;
     }
 
+    .version-badge {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.4rem;
+    }
+
+    .tool-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .tool-title {
+        font-size: 1rem;
+    }
+
     .tool-description {
+        font-size: 0.8rem;
+    }
+
+    .feature-icon {
+        font-size: 1.25rem;
+    }
+
+    .feature-text h3 {
         font-size: 0.85rem;
+    }
+
+    .feature-text p {
+        font-size: 0.75rem;
     }
 }
 

@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![LilysToolKits Logo](https://img.shields.io/badge/LilysToolKits-v1.0.0-blue.svg)
+![LilysToolKits Logo](https://img.shields.io/badge/LilysToolKits-v1.0.2-blue.svg)
 ![License](https://img.shields.io/badge/license-GPL%20v3-green.svg)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
@@ -158,6 +158,13 @@ lilystoolkits-h5/
 - **许可证**: GNU GPL v3.0
 
 ## 📊 版本历史
+
+### v1.0.2 (2026-03-05)
+- 📏 **页面优化**: 优化页面布局,减少垂直空间占用
+- 🖥️ **桌面端优化**: 调整组件尺寸,使内容在一屏内显示完整,无需滚动
+- 📱 **移动端优化**: 进一步压缩间距和字号,提升移动设备显示效果
+- 🎨 **紧凑设计**: 缩小所有组件的padding、margin和字号
+- 📐 **布局调整**: 优化网格布局、卡片间距和元素尺寸
 
 ### v1.0.0 (2026-03-05)
 - 🎨 **全新UI设计**: 采用现代化卡片式设计，渐变色彩主题
