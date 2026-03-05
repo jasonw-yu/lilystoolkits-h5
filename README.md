@@ -22,7 +22,6 @@
 - [使用说明](#-使用说明)
 - [项目结构](#-项目结构)
 - [技术栈](#-技术栈)
-- [版本历史](#-版本历史)
 - [许可证](#-许可证)
 - [联系方式](#-联系方式)
 
@@ -71,7 +70,7 @@ LilysToolKits-H5 是一个纯前端的离线工具集合，专为开发者和日
 
 1. **克隆仓库**
    ```bash
-   git clone https://gitee.com/jinwyu/lilystoolkits-h5.git
+   git clone https://gitee.com/jasonw-yu/lilystoolkits-h5.git
    cd lilystoolkits-h5
    ```
 
@@ -157,39 +156,6 @@ lilystoolkits-h5/
 - **版本控制**: Git
 - **许可证**: GNU GPL v3.0
 
-## 📊 版本历史
-
-### v1.0.2 (2026-03-05)
-- 📏 **页面优化**: 优化页面布局,减少垂直空间占用
-- 🖥️ **桌面端优化**: 调整组件尺寸,使内容在一屏内显示完整,无需滚动
-- 📱 **移动端优化**: 进一步压缩间距和字号,提升移动设备显示效果
-- 🎨 **紧凑设计**: 缩小所有组件的padding、margin和字号
-- 📐 **布局调整**: 优化网格布局、卡片间距和元素尺寸
-
-### v1.0.0 (2026-03-05)
-- 🎨 **全新UI设计**: 采用现代化卡片式设计，渐变色彩主题
-- 🎯 **统一风格**: 所有页面统一UI风格和交互体验
-- ✨ **新增功能**:
-  - 添加一键复制功能
-  - 添加Toast提示消息
-  - 添加SVG图标和Emoji图标
-  - 添加平滑过渡动画
-- 📱 **响应式优化**: 完美适配各种屏幕尺寸
-- 🔧 **代码优化**: 重构CSS变量系统，提升可维护性
-- 📝 **文档更新**: 更新README和CHANGELOG文档
-
-### v0.0.6 (2026-01-24)
-- 📁 重新组织项目结构，每个工具独立文件夹
-- 🔗 更新所有页面间的导航链接
-- 📦 方便整体或单独分发小工具
-
-### v0.0.5 (2026-01-24)
-- 🔢 统一版本号到 0.0.5
-- 📦 更新 package.json 版本号
-- 🏠 更新 index.html 中的版本显示
-
-查看完整版本历史请参阅 [CHANGELOG.md](CHANGELOG.md)
-
 ## 📄 许可证
 
 本项目采用 [GNU GPL v3.0](LICENSE) 许可证。
@@ -210,8 +176,8 @@ GNU General Public License for more details.
 
 ## 📞 联系方式
 
-- **项目主页**: [https://gitee.com/jinwyu/lilystoolkits-h5](https://gitee.com/jinwyu/lilystoolkits-h5)
-- **问题反馈**: [Gitee Issues](https://gitee.com/jinwyu/lilystoolkits-h5/issues)
+- **项目主页**: [https://gitee.com/jasonw-yu/lilystoolkits-h5](https://gitee.com/jasonw-yu/lilystoolkits-h5)
+- **问题反馈**: [Gitee Issues](https://gitee.com/jasonw-yu/lilystoolkits-h5/issues)
 - **邮箱**: lilyy.tong@qq.com
 
 ## 🙏 致谢
@@ -220,10 +186,3 @@ GNU General Public License for more details.
 
 ---
 
-<div align="center">
-
-**如果这个项目对您有帮助，请给我们一个 ⭐**
-
-Made with ❤️ by [Lily's Tool Kits](https://gitee.com/jinwyu)
-
-</div>
