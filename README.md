@@ -93,8 +93,9 @@ LilysToolKits-H5 是一个纯前端的离线工具集合，专为开发者和日
    ```
 
 4. **访问应用**
-   - 直接打开: 双击 `home/index.html` 文件
-   - 本地服务器: 访问 `http://localhost:8000/home/`
+   - 直接打开: 双击根目录 `index.html` 或 `home/index.html` 文件
+   - 本地服务器: 访问 `http://localhost:8000/` 或 `http://localhost:8000/home/`
+   - 在线访问: 部署后直接访问域名即可自动跳转到主页
 
 ## 📖 使用说明
 
