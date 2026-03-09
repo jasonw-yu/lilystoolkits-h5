@@ -2,19 +2,19 @@
 .nav-bar {
     display: flex;
     align-items: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-sm);
 }
 
 .back-button {
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-xs);
-    padding: var(--spacing-xs) var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
     background: var(--bg-color);
     color: var(--text-secondary);
     text-decoration: none;
-    border-radius: var(--radius-md);
-    font-size: 0.875rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
     font-weight: 500;
     transition: all 0.2s ease;
     border: 1px solid var(--border-color);
@@ -38,27 +38,34 @@
 .page-title {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
 }
 
 .page-icon {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .page-title h1 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-primary);
+}
+
+/* ==================== 计算器网格 ==================== */
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
 }
 
 /* ==================== 计算器卡片 ==================== */
 .calculator-card {
     background: var(--card-bg);
-    border-radius: var(--radius-xl);
-    padding: var(--spacing-xl);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-color);
-    margin-bottom: var(--spacing-lg);
     transition: all 0.3s ease;
 }
 
@@ -70,265 +77,194 @@
 .card-header {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
-    padding-bottom: var(--spacing-md);
-    border-bottom: 2px solid var(--border-color);
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .card-icon {
-    font-size: 2rem;
-    width: 56px;
-    height: 56px;
+    font-size: 1.25rem;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--bg-gradient);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-sm);
 }
 
-.card-title h2 {
-    font-size: 1.125rem;
+.card-header h2 {
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 0.25rem;
 }
 
-.card-title p {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-}
-
-/* ==================== 参数网格 ==================== */
-.param-grid {
+/* ==================== 参数列表 ==================== */
+.param-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-xs);
 }
 
-.param-item {
-    background: var(--bg-color);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-lg);
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-}
-
-.param-item:hover {
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-sm);
+.param-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) 0;
 }
 
 .param-label {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: var(--text-secondary);
-    margin-bottom: var(--spacing-md);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.param-inputs {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
+    min-width: 90px;
+    flex-shrink: 0;
 }
 
 .input {
     flex: 1;
-    min-width: 120px;
-    height: 44px;
-    padding: 0 var(--spacing-md);
-    font-size: 0.95rem;
-    font-weight: 500;
-    border: 2px solid var(--border-color);
-    border-radius: var(--radius-md);
-    background: white;
+    min-width: 0;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background: var(--bg-color);
     color: var(--text-primary);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background: white;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
 }
 
-.input::placeholder {
-    color: var(--text-light);
-    font-weight: 400;
-}
-
-.hex-input {
-    background: #fef3c7;
-    border-color: #fbbf24;
+.input.hex {
     font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
 }
 
-.hex-input:focus {
-    background: #fef3c7;
-    border-color: #f59e0b;
-}
-
-.input-separator {
-    font-size: 1.25rem;
-    color: var(--primary-color);
-    font-weight: bold;
+.separator {
+    font-size: 0.9rem;
+    color: var(--text-light);
     flex-shrink: 0;
 }
 
-.convert-btn {
-    height: 44px;
-    padding: 0 var(--spacing-lg);
+.btn-convert {
+    padding: var(--spacing-xs) var(--spacing-sm);
     background: var(--primary-gradient);
     color: white;
     border: none;
-    border-radius: var(--radius-md);
-    font-size: 0.95rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     white-space: nowrap;
-    box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
 }
 
-.convert-btn:hover {
-    transform: translateY(-2px);
+.btn-convert:hover {
+    transform: translateY(-1px);
     box-shadow: var(--shadow-md);
 }
 
-.convert-btn:active {
+.btn-convert:active {
     transform: translateY(0);
 }
 
-/* ==================== 操作按钮 ==================== */
-.action-buttons {
+/* ==================== 操作栏 ==================== */
+.action-bar {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-xl);
+    padding: var(--spacing-xs) 0;
 }
 
-.btn {
+.btn-clear {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: var(--spacing-xs);
-    padding: var(--spacing-md) var(--spacing-xl);
-    border: none;
-    border-radius: var(--radius-lg);
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-danger {
+    padding: var(--spacing-xs) var(--spacing-md);
     background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
     color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-clear:hover {
+    transform: translateY(-1px);
     box-shadow: var(--shadow-md);
 }
 
-.btn-danger:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-/* ==================== Toast提示 ==================== */
-.toast {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 12px 24px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    font-size: 0.875rem;
-    font-weight: 500;
-}
-
-.toast.show {
-    opacity: 1;
+.btn-clear:active {
+    transform: translateY(0);
 }
 
 /* ==================== 响应式设计 ==================== */
+@media (max-width: 1024px) {
+    .calculator-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-bar {
         flex-direction: column;
         align-items: flex-start;
-        gap: var(--spacing-md);
+        gap: var(--spacing-xs);
     }
 
     .back-button {
         align-self: flex-start;
     }
 
-    .calculator-card {
-        padding: var(--spacing-lg);
+    .param-row {
+        flex-wrap: wrap;
     }
 
-    .card-header {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .param-inputs {
-        flex-direction: column;
-        align-items: stretch;
+    .param-label {
+        width: 100%;
+        margin-bottom: var(--spacing-xs);
     }
 
     .input {
+        flex: 1 1 calc(50% - var(--spacing-xs));
+    }
+
+    .btn-convert {
         width: 100%;
-    }
-
-    .input-separator {
-        text-align: center;
-        padding: var(--spacing-xs) 0;
-    }
-
-    .convert-btn {
-        width: 100%;
-    }
-
-    .action-buttons {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
+        margin-top: var(--spacing-xs);
     }
 }
 
 @media (max-width: 480px) {
     .calculator-card {
-        padding: var(--spacing-md);
+        padding: var(--spacing-xs);
     }
 
-    .card-icon {
-        width: 48px;
-        height: 48px;
-        font-size: 1.5rem;
+    .card-header {
+        margin-bottom: var(--spacing-xs);
     }
 
-    .card-title h2 {
-        font-size: 1rem;
+    .param-label {
+        font-size: 0.7rem;
+        min-width: 80px;
     }
 
     .input {
-        height: 40px;
-        font-size: 0.9rem;
+        font-size: 0.75rem;
+        padding: 0.3rem var(--spacing-xs);
     }
 
-    .convert-btn {
-        height: 40px;
-        font-size: 0.9rem;
+    .btn-convert {
+        font-size: 0.7rem;
+        padding: 0.3rem var(--spacing-sm);
     }
 }
 

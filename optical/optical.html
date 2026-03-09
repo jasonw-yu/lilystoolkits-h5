@@ -31,148 +31,122 @@
         <!-- 主内容区 -->
         <main class="app-main">
             <div class="container">
-                <!-- DDM参数转换 -->
-                <div class="calculator-card">
-                    <div class="card-header">
-                        <div class="card-icon">🌡️</div>
-                        <div class="card-title">
+                <div class="calculator-grid">
+                    <!-- DDM参数转换 -->
+                    <div class="calculator-card">
+                        <div class="card-header">
+                            <div class="card-icon">🌡️</div>
                             <h2>DDM 参数转换</h2>
-                            <p>数字诊断监控参数转换</p>
                         </div>
-                    </div>
 
-                    <div class="param-grid">
-                        <!-- 温度 -->
-                        <div class="param-item">
-                            <div class="param-label">温度 (℃)</div>
-                            <div class="param-inputs">
+                        <div class="param-list">
+                            <!-- 温度 -->
+                            <div class="param-row">
+                                <div class="param-label">温度 (℃)</div>
                                 <input class="input" type="number" id="temperature" placeholder="温度值" step="0.001">
-                                <span class="input-separator">⇄</span>
-                                <input class="input hex-input" type="text" id="tempHex" placeholder="寄存器值">
-                                <button class="convert-btn" onclick="convertTemp()">转换</button>
+                                <span class="separator">⇄</span>
+                                <input class="input hex" type="text" id="tempHex" placeholder="寄存器值">
+                                <button class="btn-convert" onclick="convertTemp()">转换</button>
                             </div>
-                        </div>
 
-                        <!-- 电压 -->
-                        <div class="param-item">
-                            <div class="param-label">电压 (V)</div>
-                            <div class="param-inputs">
+                            <!-- 电压 -->
+                            <div class="param-row">
+                                <div class="param-label">电压 (V)</div>
                                 <input class="input" type="number" id="voltage" placeholder="电压值" step="0.001">
-                                <span class="input-separator">⇄</span>
-                                <input class="input hex-input" type="text" id="voltHex" placeholder="寄存器值">
-                                <button class="convert-btn" onclick="convertVolt()">转换</button>
+                                <span class="separator">⇄</span>
+                                <input class="input hex" type="text" id="voltHex" placeholder="寄存器值">
+                                <button class="btn-convert" onclick="convertVolt()">转换</button>
                             </div>
-                        </div>
 
-                        <!-- 偏置电流 -->
-                        <div class="param-item">
-                            <div class="param-label">偏置电流 (mA)</div>
-                            <div class="param-inputs">
+                            <!-- 偏置电流 -->
+                            <div class="param-row">
+                                <div class="param-label">偏置电流 (mA)</div>
                                 <input class="input" type="number" id="current" placeholder="电流值" step="0.001">
-                                <span class="input-separator">⇄</span>
-                                <input class="input hex-input" type="text" id="currentHex" placeholder="寄存器值">
-                                <button class="convert-btn" onclick="convertCurrent()">转换</button>
+                                <span class="separator">⇄</span>
+                                <input class="input hex" type="text" id="currentHex" placeholder="寄存器值">
+                                <button class="btn-convert" onclick="convertCurrent()">转换</button>
                             </div>
-                        </div>
 
-                        <!-- 光功率 -->
-                        <div class="param-item">
-                            <div class="param-label">光功率 (dBm)</div>
-                            <div class="param-inputs">
+                            <!-- 光功率 -->
+                            <div class="param-row">
+                                <div class="param-label">光功率 (dBm)</div>
                                 <input class="input" type="number" id="power" placeholder="功率值" step="0.001">
-                                <span class="input-separator">⇄</span>
-                                <input class="input hex-input" type="text" id="powerHex" placeholder="寄存器值">
-                                <button class="convert-btn" onclick="convertPower()">转换</button>
+                                <span class="separator">⇄</span>
+                                <input class="input hex" type="text" id="powerHex" placeholder="寄存器值">
+                                <button class="btn-convert" onclick="convertPower()">转换</button>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- BER/SNR转换 -->
-                <div class="calculator-card">
-                    <div class="card-header">
-                        <div class="card-icon">📊</div>
-                        <div class="card-title">
+                    <!-- BER/SNR转换 -->
+                    <div class="calculator-card">
+                        <div class="card-header">
+                            <div class="card-icon">📊</div>
                             <h2>BER/SNR 转换</h2>
-                            <p>误码率与信噪比转换</p>
                         </div>
-                    </div>
 
-                    <div class="param-grid">
-                        <!-- BER -->
-                        <div class="param-item">
-                            <div class="param-label">误码率 (BER)</div>
-                            <div class="param-inputs">
+                        <div class="param-list">
+                            <!-- BER -->
+                            <div class="param-row">
+                                <div class="param-label">误码率 (BER)</div>
                                 <input class="input" type="text" id="ber" placeholder="如: 1.0e-12">
-                                <span class="input-separator">⇄</span>
-                                <input class="input hex-input" type="text" id="berHex" placeholder="寄存器值">
-                                <button class="convert-btn" onclick="convertBer()">转换</button>
+                                <span class="separator">⇄</span>
+                                <input class="input hex" type="text" id="berHex" placeholder="寄存器值">
+                                <button class="btn-convert" onclick="convertBer()">转换</button>
                             </div>
-                        </div>
 
-                        <!-- SNR -->
-                        <div class="param-item">
-                            <div class="param-label">信噪比 (SNR)</div>
-                            <div class="param-inputs">
+                            <!-- SNR -->
+                            <div class="param-row">
+                                <div class="param-label">信噪比 (SNR)</div>
                                 <input class="input" type="number" id="snr" placeholder="SNR值(dB)" step="0.01">
-                                <span class="input-separator">⇄</span>
-                                <input class="input hex-input" type="text" id="snrHex" placeholder="寄存器值">
-                                <button class="convert-btn" onclick="convertSnr()">转换</button>
+                                <span class="separator">⇄</span>
+                                <input class="input hex" type="text" id="snrHex" placeholder="寄存器值">
+                                <button class="btn-convert" onclick="convertSnr()">转换</button>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 光功率单位转换 -->
-                <div class="calculator-card">
-                    <div class="card-header">
-                        <div class="card-icon">⚡</div>
-                        <div class="card-title">
+                    <!-- 光功率单位转换 -->
+                    <div class="calculator-card">
+                        <div class="card-header">
+                            <div class="card-icon">⚡</div>
                             <h2>光功率单位转换</h2>
-                            <p>mW 与 dBm 相互转换</p>
                         </div>
-                    </div>
 
-                    <div class="param-grid">
-                        <div class="param-item">
-                            <div class="param-label">功率转换</div>
-                            <div class="param-inputs">
+                        <div class="param-list">
+                            <div class="param-row">
+                                <div class="param-label">功率转换</div>
                                 <input class="input" type="number" id="mw" placeholder="mW值" step="0.001">
-                                <span class="input-separator">⇄</span>
+                                <span class="separator">⇄</span>
                                 <input class="input" type="number" id="dbm" placeholder="dBm值" step="0.001">
-                                <button class="convert-btn" onclick="convertPowerUnit()">转换</button>
+                                <button class="btn-convert" onclick="convertPowerUnit()">转换</button>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 可靠性单位转换 -->
-                <div class="calculator-card">
-                    <div class="card-header">
-                        <div class="card-icon">🔧</div>
-                        <div class="card-title">
+                    <!-- 可靠性单位转换 -->
+                    <div class="calculator-card">
+                        <div class="card-header">
+                            <div class="card-icon">🔧</div>
                             <h2>可靠性单位转换</h2>
-                            <p>FIT 与 PPM 相互转换</p>
                         </div>
-                    </div>
 
-                    <div class="param-grid">
-                        <div class="param-item">
-                            <div class="param-label">可靠性转换</div>
-                            <div class="param-inputs">
+                        <div class="param-list">
+                            <div class="param-row">
+                                <div class="param-label">可靠性转换</div>
                                 <input class="input" type="number" id="fit" placeholder="FIT值" step="0.001">
-                                <span class="input-separator">⇄</span>
+                                <span class="separator">⇄</span>
                                 <input class="input" type="number" id="ppm" placeholder="PPM值" step="0.001">
-                                <button class="convert-btn" onclick="convertReliability()">转换</button>
+                                <button class="btn-convert" onclick="convertReliability()">转换</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 清空按钮 -->
-                <div class="action-buttons">
-                    <button class="btn btn-danger" onclick="clearAll()">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="action-bar">
+                    <button class="btn-clear" onclick="clearAll()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="3 6 5 6 21 6"></polyline>
                             <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
                         </svg>

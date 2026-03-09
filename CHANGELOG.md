@@ -5,6 +5,40 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.4] - 2026-03-09
+
+### Changed
+- 🎨 **H5显示优化**
+  - 应用容器设置max-height: 100vh,防止整体滚动
+  - 主内容区设置overflow-y: auto,仅在内容区内部滚动
+  - 优化所有页面间距和字号,更适合H5显示
+
+- 📱 **首页优化**
+  - 工具网格改为flex布局,支持横向排列
+  - 工具卡片设置弹性宽度,自动换行
+  - 缩小头部导航、工具卡片、页脚等所有元素尺寸
+
+- 🔢 **进制转换器优化**
+  - 三个输入框横向排列
+  - 使用flex布局,自动换行
+  - 缩小所有元素尺寸和间距
+
+- 🔤 **Hex/ASCII转换器优化**
+  - ASCII和Hex输入区横向排列
+  - 隐藏转换指示器,简化界面
+  - 缩小所有元素尺寸和间距
+
+- 💡 **光模块计算器重新设计**
+  - 采用2列网格布局,充分利用笔记本屏幕宽度
+  - 4个计算器卡片横向排列,节省垂直空间
+  - 参数行横向排列所有元素
+  - 大幅缩小所有元素尺寸和间距
+  - 响应式设计,小屏幕自动切换为单列
+
+### Fixed
+- 🐛 修复页面需要滚动才能显示完整内容的问题
+- 🐛 优化移动端显示效果
+
 ## [1.0.3] - 2026-03-09
 
 ### Changed
